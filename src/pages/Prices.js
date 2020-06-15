@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { PriceTable } from '../components/PriceTable';
-import { data } from '../data/data';
+import { prices } from '../data/data';
 
 
 export class Prices extends Component {
   state = {
-    prices: data.prices
+    prices: prices
   };
 
   render() {
