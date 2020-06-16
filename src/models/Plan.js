@@ -1,5 +1,6 @@
 export class Plan {
-  constructor({ brand, includedMinutes, extraTax }) {
+  constructor({ id, brand, includedMinutes, extraTax }) {
+    this.id = id;
     this.brand = brand;
     this.includedMinutes = Number(includedMinutes);
     this.extraTax = Number(extraTax);
