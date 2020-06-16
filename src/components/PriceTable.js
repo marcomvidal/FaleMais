@@ -1,7 +1,8 @@
 import React from 'react';
+import { helpers } from '../helpers/helpers';
 
-export const PriceTable = (props) => (
-  <table class="table table-hover">
+export const PriceTable = ({ prices }) => (
+  <table className="table table-hover">
     <thead>
       <tr>
         <th scope="col">Origem</th>
@@ -10,11 +11,11 @@ export const PriceTable = (props) => (
       </tr>
     </thead>
     <tbody>
-      {props.prices.map(price =>
-        <tr>
-          <td>{price.sourceCode}</td>
-          <td>{price.destinationCode}</td>
-          <td>R$ {price.formattedValue()}</td>
+      {prices.map(price =>
+        <tr key={price.id}>
+          <td>{price.sourceCode.number}</td>
+          <td>{price.destinationCode.number}</td>
+          <td>R$ {helpers.formatMoney('pt-BR', price.value)}</td>
         </tr>
       )}
     </tbody>

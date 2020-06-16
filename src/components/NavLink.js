@@ -1,7 +1,7 @@
 import React from 'react';
 
-export const NavLink = (props) => (
-  <li class="nav-item">
-    <a class="nav-link" href={props.link.url}>{props.link.label}</a>
+export const NavLink = ({ link }) => (
+  <li className="nav-item">
+    <a className="nav-link" href={link.url}>{link.label}</a>
   </li>
 );
