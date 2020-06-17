@@ -3,10 +3,10 @@ import { Price } from '../models/Price';
 import { Plan } from '../models/Plan';
 
 export const areaCodes = [
-  new AreaCode({ id: 1, number: '011' }),
-  new AreaCode({ id: 2, number: '016' }),
-  new AreaCode({ id: 3, number: '017' }),
-  new AreaCode({ id: 4, number: '018' })
+  new AreaCode({ id: 1, number: '011', possiblePairs: [2, 3, 4] }),
+  new AreaCode({ id: 2, number: '016', possiblePairs: [1] }),
+  new AreaCode({ id: 3, number: '017', possiblePairs: [1] }),
+  new AreaCode({ id: 4, number: '018', possiblePairs: [1] })
 ];
 
 export const prices = [

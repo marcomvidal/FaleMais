@@ -9,6 +9,7 @@ export class Simulation {
 
   generate() {
     return new SimulationResult({
+      plan: this.plan,
       withPlan: this.withPlanCalculation(),
       withoutPlan: this.withoutPlanCalculation()
     });

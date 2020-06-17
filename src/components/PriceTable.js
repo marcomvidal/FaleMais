@@ -7,7 +7,7 @@ export const PriceTable = ({ prices }) => (
       <tr>
         <th scope="col">Origem</th>
         <th scope="col">Destino</th>
-        <th scope="col">R$ por minuto</th>
+        <th scope="col">R$ / minuto</th>
       </tr>
     </thead>
     <tbody>

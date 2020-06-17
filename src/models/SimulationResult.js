@@ -1,5 +1,6 @@
 export class SimulationResult {
-  constructor({ withPlan, withoutPlan }) {
+  constructor({ plan, withPlan, withoutPlan }) {
+    this.plan = plan;
     this.withPlan = withPlan;
     this.withoutPlan = withoutPlan;
   }

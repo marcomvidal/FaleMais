@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import { NavLink } from './NavLink';
+import { NavItem } from './NavItem';
+import { links } from '../data/links';
 
 export class NavBar extends Component {
   state = {
-    links: [
-      { id: '1', label: 'Tabela de tarifas', url: '/' },
-      { id: '2', label: 'Calculadora FaleMais', url: '/calculadora' }
-    ]
+    links: links
   };
 
   render() {
@@ -16,7 +14,11 @@ export class NavBar extends Component {
 
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto">
-            {this.state.links.map(link => <NavLink key={link.id} link={link} />)}
+            {this.state.links.map(link =>
+              <NavItem
+                key={link.id}
+                link={link}
+                onNavigate={this.onNavigate} />)}
           </ul>
         </div>
       </nav>
