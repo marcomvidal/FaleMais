@@ -20,7 +20,7 @@ A aplicação está divida é em três partes essenciais:
 2. Restaure as dependências do NPM instaladas em `CopaFilmes.Frontend` com o comando `npm install`.
 
 ## Execução
-Execute a aplicação emitindo `npm start`;
+Execute a aplicação emitindo `npm start`. A aplicação pode ser acessada no navegador por `http://localhost:3000`.
 
 ## Objetos de estudos
 - Orientação a objetos
