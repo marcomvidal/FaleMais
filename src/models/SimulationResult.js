@@ -3,4 +3,8 @@ export class SimulationResult {
     this.withPlan = withPlan;
     this.withoutPlan = withoutPlan;
   }
+
+  isPlanMoreAdvantageous() {
+    return this.withPlan < this.withoutPlan;
+  }
 }

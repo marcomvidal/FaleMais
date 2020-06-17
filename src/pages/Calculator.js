@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { areaCodes, plans } from '../data/data';
+import { areaCodes, plans, prices } from '../data/data';
 import { Card } from '../components/Card';
 import { InputContainer } from '../components/InputContainer';
-import { SimulationResult } from '../models/SimulationResult';
 import { SimulationResultCard } from '../components/SimulationResultCard';
 import { Simulation } from '../models/Simulation';
 
@@ -17,17 +16,28 @@ export class Calculator extends Component {
     result: null
   };
 
-  handleSource = event => this.setState({ source: this.state.codes[event.target.value] });
-  
-  handleDestination = event => this.setState({ destination: this.state.codes[event.target.value] });
+  handleSource = event => this.setState(
+    { source: this.state.codes.find(code => code.id === Number(event.target.value)) });
+
+  handleDestination = event => this.setState(
+    { destination: this.state.codes.find(code => code.id === Number(event.target.value)) });
 
   handleCallTime = event => this.setState({ callTime: event.target.value });
 
-  handlePlan = event => this.setState({ selectedPlan: this.state.plans[event.target.value] });
+  handlePlan = event => this.setState(
+    { selectedPlan: this.state.plans.find(plan => plan.id === Number(event.target.value)) });
 
   handleSubmit = event => {
     event.preventDefault();
-    const simulation = new Simulation(this.state.selectedPlan, this.state.callTime);
+    const price = prices.find(price =>
+      price.sourceCode === this.state.source && price.destinationCode === this.state.destination);
+
+    const simulation = new Simulation({
+      callTime: this.state.callTime,
+      plan: this.state.selectedPlan,
+      price: price
+    });
+
     this.setState({ result: simulation.generate() });
   }
 
