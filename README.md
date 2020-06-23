@@ -26,3 +26,7 @@ Execute a aplicação emitindo `npm start`. A aplicação pode ser acessada no n
 - Orientação a objetos
 - Programação funcional
 - JavaScript ES6 e React
+
+## Screenshots
+* [Listagem de planos](https://raw.githubusercontent.com/marcomvidal/FaleMais/master/screenshot_listagem.png)
+* [Calculadora de custos](https://raw.githubusercontent.com/marcomvidal/FaleMais/master/screenshot_calculadora.png)
